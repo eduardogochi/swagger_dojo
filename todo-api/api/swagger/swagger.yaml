@@ -30,7 +30,7 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Todo"
-      x-swagger-router-controller: "GetAllTodos"
+      x-swagger-router-controller: "Todos"
     post:
       description: "Add a new todo"
       operationId: "AddTodo"
@@ -48,8 +48,7 @@ paths:
           description: "Successful todo add"
           schema:
             type: string
-      x-swagger-router-controller:
-        "AddTodo"
+      x-swagger-router-controller: "Todos"
   /todo/{todo_id}:
     get:
       description: "Retrieve a single todo by id"
@@ -68,7 +67,7 @@ paths:
           description: "Todo responses"
           schema:
             $ref: "#/definitions/Todo"
-      x-swagger-router-controller: "FindTodoById"
+      x-swagger-router-controller: "Todos"
     delete:
       description: "Delete a todo by Id"
       operationId: "DeleteTodoById"
@@ -82,7 +81,7 @@ paths:
       responses:
         204:
           description: "todo deleted"
-      x-swagger-router-controller: "DeleteTodoById"
+      x-swagger-router-controller: "Todos"
     put:
       description: "Update a single todo by id"
       operationId: "UpdateTodoById"
