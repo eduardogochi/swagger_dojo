@@ -9,6 +9,9 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.12.3",
+    "globule": "^1.2.1",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.4",
     "swagger-express-mw": "^0.1.0"
   },
   "devDependencies": {
