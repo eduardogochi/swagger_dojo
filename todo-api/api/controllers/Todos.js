@@ -53,9 +53,38 @@ const DeleteTodoById = (req, res) => {
     })
 }
 
+const UpdateTodoById = (req, res) => {
+  const todo_id = req.swagger.params.todo_id.value
+  const body = req.swagger.params.updated_todo.value
+
+  console.log('The body: ', body);
+
+  const updated_body = {}
+
+  body.forEach(field => {
+    console.log(field);
+  })
+
+
+  console.log('Updated body: ', updated_body);
+
+  Todo
+    .findOneAndUpdate(
+      {"todo_id": todo_id}, 
+      {body}
+    )
+    .then(todo => {
+      res.status(200).json(todo)
+    })
+    .catch(err => {
+      res.status(500)
+    })
+}
+
 module.exports = {
   GetAllTodos: GetAllTodos,
   AddTodo: AddTodo,
   FindTodoById: FindTodoById,
-  DeleteTodoById: DeleteTodoById
+  DeleteTodoById: DeleteTodoById,
+  UpdateTodoById: UpdateTodoById
 }

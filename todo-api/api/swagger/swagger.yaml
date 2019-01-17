@@ -103,6 +103,7 @@ paths:
           description: "Todo updated"
         400:
           description: "There was an error!"
+      x-swagger-router-controller: "Todos"
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
