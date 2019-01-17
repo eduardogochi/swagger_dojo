@@ -46,7 +46,8 @@ paths:
       responses:
         200:
           description: "Successful todo add"
-          
+          schema:
+            type: string
       x-swagger-router-controller:
         "AddTodo"
   /todo/{id}:
@@ -110,9 +111,6 @@ definitions:
   Todo:
     type: "object"
     properties:
-      todo_id:
-        type: "integer"
-        description: "Id for the todo"
       todo:
         type: "string"
         description: "The todo item"
@@ -125,7 +123,7 @@ definitions:
         description: "Creator or owner of the todo"
       duedate:
         type: "string"
-        format: "datetime"
+        format: "date-time"
         description: "When the todo is due"
       completed:
         type: "boolean"
