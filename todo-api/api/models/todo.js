@@ -2,7 +2,7 @@
 
 exports = module.exports = function (db, mongoose) {
   const TodoSchema = new mongoose.Schema({
-    // _id: { type: mongoose.Schema.Types.ObjectId },
+    todo_id: {type: Number, required: true },
     todo: {type: String, required: true},
     author: {type: String, required: false},
     completed: {type: Boolean, required: false},

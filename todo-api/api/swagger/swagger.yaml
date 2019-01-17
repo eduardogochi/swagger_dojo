@@ -50,14 +50,14 @@ paths:
             type: string
       x-swagger-router-controller:
         "AddTodo"
-  /todo/{id}:
+  /todo/{todo_id}:
     get:
       description: "Retrieve a single todo by id"
       operationId: "FindTodoById"
       produces:
         - "application/json"
       parameters:
-        - name: "id"
+        - name: "todo_id"
           in: "path"
           description: "ID of the Todo to get"
           required: true
@@ -73,7 +73,7 @@ paths:
       description: "Delete a todo by Id"
       operationId: "DeleteTodoById"
       parameters:
-        - name: "id"
+        - name: "todo_id"
           in: "path"
           description: "id of the todo to delete"
           required: true
@@ -87,7 +87,7 @@ paths:
       description: "Update a single todo by id"
       operationId: "UpdateTodoById"
       parameters:
-        - name: "id"
+        - name: "todo_id"
           in: "path"
           description: "Id of the todo being updated"
           required: true
@@ -111,6 +111,9 @@ definitions:
   Todo:
     type: "object"
     properties:
+      todo_id:
+        type: "integer"
+        description: "The todo id"
       todo:
         type: "string"
         description: "The todo item"
